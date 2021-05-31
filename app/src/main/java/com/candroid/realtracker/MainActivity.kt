@@ -14,12 +14,14 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.candroid.realtracker.authantication.LoginActivity
 import com.candroid.realtracker.chatbot.ChatActivity
 import com.candroid.realtracker.fitInfo.FitnessActivity
+import com.candroid.realtracker.habittracker.HabitActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     lateinit var toolbar: Toolbar
     lateinit var lAuth: FirebaseAuth
+   lateinit var cardHabit:CardView
     lateinit var chatId: CardView
     lateinit var profile: CardView
     lateinit var fitVideo: CardView
@@ -31,12 +33,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         toolbar = findViewById(R.id.toolbar)
         chatId = findViewById(R.id.chatId)
+        cardHabit=findViewById(R.id.cardHabit)
         fitVideo = findViewById(R.id.fitVideo)
         drawerLayout = findViewById(R.id.drawerLayout)
         navigationView = findViewById(R.id.navigationView)
         profile = findViewById(R.id.profile)
         lAuth = FirebaseAuth.getInstance()
-
+        cardHabit.setOnClickListener {
+            val intent = Intent(this, HabitActivity::class.java)
+            startActivity(intent)
+        }
 
 
 

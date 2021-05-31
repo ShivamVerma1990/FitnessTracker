@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".habittracker.HabitHomeFragment">
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/swipeToRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_habits"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:itemCount="20"
+        tools:listitem="@layout/list_of_habit" />
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+<com.tuann.floatingactionbuttonexpandable.FloatingActionButtonExpandable
+    android:id="@+id/fab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:fab_bg_color="#2B028E"
+    app:fab_content="Create new Habit"
+    app:fab_duration="200"
+android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_margin="7dp"
+    app:fab_expanded="true"
+    app:fab_icon="@drawable/ic_baseline_add"
+    app:fab_padding="@dimen/padding_fab_default"
+    app:fab_padding_text_icon="@dimen/padding_text_icon_default"
+    app:fab_text_color="@android:color/white"
+    app:fab_text_size="@dimen/text_size_action_button_default"
+    app:fab_typeface="fonts/RobotoSlab-Regular.ttf"
+   />
+
+<TextView
+    android:id="@+id/tv_emptyView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:text="Add a habit! "
+    android:textColor="#ffffff"
+    android:textSize="20sp"
+    android:textStyle="italic"
+    android:visibility="gone" />
+
+
+</RelativeLayout>
