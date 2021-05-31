@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "549182209329",
+    "project_id": "realtracker-f11d9",
+    "storage_bucket": "realtracker-f11d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549182209329:android:a21c7dcf7ea174cd4c8410",
+        "android_client_info": {
+          "package_name": "com.candroid.realtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549182209329-5vu598j39546upruclo771eoqiroho0o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.candroid.realtracker",
+            "certificate_hash": "4f1aa2f7e289acc3224e35fbb6edbedb1e9aab43"
+          }
+        },
+        {
+          "client_id": "549182209329-u9urs7msr8c4lpb4csh33u7kriinqm14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0KsNqSnZYYWvjtP20rPvdc3pdnH_W4Kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549182209329-u9urs7msr8c4lpb4csh33u7kriinqm14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

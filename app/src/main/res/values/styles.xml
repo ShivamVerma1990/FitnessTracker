@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:statusBarColor">#2B028E</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+
+
+    </style>
+<style name="MyTheme" parent="android:style/Widget.Holo.ActionButton.Overflow">
+    <item name="android:src">@drawable/ic_baseline_scatter_plot_24</item>
+</style>
+</resources>

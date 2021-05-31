@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_fitness_vids"
+    app:startDestination="@id/optionsFragment">
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="com.candroid.realtracker.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" >
+        <action
+            android:id="@+id/action_optionsFragment_to_bicepsFragment"
+            app:destination="@id/bicepsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bicepsFragment"
+        android:name="com.candroid.realtracker.BicepsFragment"
+        android:label="fragment_biceps"
+        tools:layout="@layout/fragment_biceps" >
+        <action
+            android:id="@+id/action_bicepsFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+</navigation>

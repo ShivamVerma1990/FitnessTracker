@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BicepsFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPlus"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:videoId="GxjWKyzMx3E"
+                app:autoPlay="false"
+
+                app:showYouTubeButton="true"
+                app:handleNetworkEvents="true"
+
+                app:enableLiveVideoUi="false"
+                app:showVideoCurrentTime="true"
+                app:showVideoDuration="true"
+                app:showSeekBar="true"
+                app:showFullScreenButton="true"
+
+                />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPlus1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:videoId="aNVviTECNM0"
+                    app:autoPlay="false"
+
+                    app:showYouTubeButton="true"
+                    app:handleNetworkEvents="true"
+
+                    app:enableLiveVideoUi="false"
+                    app:showVideoCurrentTime="true"
+                    app:showVideoDuration="true"
+                    app:showSeekBar="true"
+                    app:showFullScreenButton="true"
+
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPlus2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:videoId="aNVviTECNM0"
+                    app:autoPlay="false"
+
+                    app:showYouTubeButton="true"
+                    app:handleNetworkEvents="true"
+
+                    app:enableLiveVideoUi="false"
+                    app:showVideoCurrentTime="true"
+                    app:showVideoDuration="true"
+                    app:showSeekBar="true"
+                    app:showFullScreenButton="true"
+
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPlus3"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:videoId="aNVviTECNM0"
+                    app:autoPlay="false"
+
+                    app:showYouTubeButton="true"
+                    app:handleNetworkEvents="true"
+
+                    app:enableLiveVideoUi="false"
+                    app:showVideoCurrentTime="true"
+                    app:showVideoDuration="true"
+                    app:showSeekBar="true"
+                    app:showFullScreenButton="true"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
