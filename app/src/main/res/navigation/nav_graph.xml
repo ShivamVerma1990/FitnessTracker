@@ -33,5 +33,8 @@
         <action
             android:id="@+id/action_updateHabitFragment_to_habitHomeFragment"
             app:destination="@id/habitHomeFragment" />
+        <argument
+            android:name="selectedHabit"
+            app:argType="com.candroid.realtracker.habittracker.Habit" />
     </fragment>
 </navigation>

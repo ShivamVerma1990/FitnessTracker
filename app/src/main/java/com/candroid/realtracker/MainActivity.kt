@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.ProgressBar
+import android.widget.RelativeLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -17,28 +20,47 @@ import com.candroid.realtracker.fitInfo.FitnessActivity
 import com.candroid.realtracker.habittracker.HabitActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     lateinit var toolbar: Toolbar
     lateinit var lAuth: FirebaseAuth
-   lateinit var cardHabit:CardView
+    lateinit var cardHabit: CardView
     lateinit var chatId: CardView
     lateinit var profile: CardView
     lateinit var fitVideo: CardView
     lateinit var drawerLayout: DrawerLayout
-
+    lateinit var progressBar: ProgressBar
+    lateinit var progress: RelativeLayout
     lateinit var navigationView: NavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        progressBar = findViewById(R.id.progressBar)
+        progress = findViewById(R.id.progress)
+        progressBar.visibility = View.VISIBLE
+        progress.visibility = View.VISIBLE
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(3000)
+            progressBar.visibility = View.GONE
+            progress.visibility = View.GONE
+        }
+
         toolbar = findViewById(R.id.toolbar)
         chatId = findViewById(R.id.chatId)
-        cardHabit=findViewById(R.id.cardHabit)
+
+        cardHabit = findViewById(R.id.cardHabit)
+
         fitVideo = findViewById(R.id.fitVideo)
         drawerLayout = findViewById(R.id.drawerLayout)
         navigationView = findViewById(R.id.navigationView)
         profile = findViewById(R.id.profile)
         lAuth = FirebaseAuth.getInstance()
+
+
         cardHabit.setOnClickListener {
             val intent = Intent(this, HabitActivity::class.java)
             startActivity(intent)
