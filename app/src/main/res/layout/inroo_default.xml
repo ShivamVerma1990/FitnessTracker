@@ -11,7 +11,7 @@
         android:layout_height="650dp"
         android:layout_below="@+id/discription"
         android:layout_centerInParent="true"
-
+android:layout_margin="10dp"
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:ignore="VectorDrawableCompat" />

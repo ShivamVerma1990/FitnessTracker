@@ -11,12 +11,17 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:padding="10dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="8dp">
+        app:cardCornerRadius="8dp"
+
+
+        app:cardElevation="8dp">
 
         <ImageView
 

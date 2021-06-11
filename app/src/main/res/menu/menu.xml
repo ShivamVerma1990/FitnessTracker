@@ -9,5 +9,20 @@
 
 
         />
-
+    <item
+        android:title="Privacy policy"
+        android:icon="@drawable/ic_policy"
+        android:id="@+id/policy"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="Team"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_team"
+        android:id="@+id/team"/>
+    <item
+        android:title="About"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_about"
+        android:id="@+id/about"/>
 </menu>

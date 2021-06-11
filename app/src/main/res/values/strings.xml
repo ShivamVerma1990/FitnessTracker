@@ -17,4 +17,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="todo">todo</string>
+    <string name="todos">TODO</string>
+    <string name="image">image</string>
+    <string name="todok">TODO</string>
 </resources>

@@ -52,7 +52,7 @@
                     app:startIconTint="#000000"
                     app:endIconMode="clear_text"
                     app:endIconTint="#000000"
-                    android:id="@+id/inputEmailsl"
+                    android:id="@+id/inputTitle"
 
                     >
                     <com.google.android.material.textfield.TextInputEditText
@@ -82,7 +82,7 @@
                     app:startIconTint="#000000"
                     app:endIconMode="clear_text"
                     app:endIconTint="#000000"
-                    android:id="@+id/et_habitDescription"
+                    android:id="@+id/etHabitDescription"
 
                     >
                     <com.google.android.material.textfield.TextInputEditText
@@ -93,7 +93,7 @@
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <Button
-                    android:id="@+id/btn_pickDate"
+                    android:id="@+id/btnPickDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -108,7 +108,7 @@
 
                 <TextView
                     android:textColor="#000000"
-                    android:id="@+id/tv_dateSelected"
+                    android:id="@+id/tvDateSelected"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -116,7 +116,7 @@
                     android:textSize="19sp" />
 
                 <Button
-                    android:id="@+id/btn_pickTime"
+                    android:id="@+id/btnPickTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -130,7 +130,7 @@
 
                 <TextView
                     android:textColor="#000000"
-                    android:id="@+id/tv_timeSelected"
+                    android:id="@+id/tvTimeSelected"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -144,7 +144,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/iv_teaSelected"
+                        android:id="@+id/ivTeaSelected"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
@@ -152,7 +152,7 @@
                         android:src="@drawable/tea_selected" />
 
                     <ImageView
-                        android:id="@+id/iv_fastFoodSelected"
+                        android:id="@+id/ivFastFoodSelected"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
@@ -160,7 +160,7 @@
                         android:src="@drawable/coffe_select" />
 
                     <ImageView
-                        android:id="@+id/iv_smokingSelected"
+                        android:id="@+id/ivSmokingSelected"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
@@ -178,7 +178,7 @@
                 </RelativeLayout>
 
                 <Button
-                    android:id="@+id/btn_confirm"
+                    android:id="@+id/btn_confirm_create"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"

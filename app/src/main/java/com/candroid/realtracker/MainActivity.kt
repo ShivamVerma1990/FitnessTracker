@@ -1,83 +1,75 @@
 package com.candroid.realtracker
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
+import android.view.View
+import android.widget.ProgressBar
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
+import com.candroid.realtracker.articales.ArticlesActivity
+import com.candroid.realtracker.articales.CovidActivity
 import com.candroid.realtracker.authantication.LoginActivity
+import com.candroid.realtracker.bmical.BmiActivity
 import com.candroid.realtracker.chatbot.ChatActivity
 import com.candroid.realtracker.fitInfo.FitnessActivity
 import com.candroid.realtracker.habittracker.HabitActivity
-import com.google.android.material.navigation.NavigationView
+import com.candroid.realtracker.optionfragment.AboutActivity
+import com.candroid.realtracker.optionfragment.PolActivity
+import com.candroid.realtracker.optionfragment.TActivity
+import com.candroid.realtracker.stepCounter.StepActivity
+import com.candroid.realtracker.workout.WorkoutActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
+import com.smarteist.autoimageslider.SliderAnimations
+import com.smarteist.autoimageslider.SliderView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var toolbar: Toolbar
-    lateinit var lAuth: FirebaseAuth
-   lateinit var cardHabit:CardView
-    lateinit var chatId: CardView
-    lateinit var profile: CardView
-    lateinit var fitVideo: CardView
-    lateinit var drawerLayout: DrawerLayout
+    lateinit var cardCovid: CardView
 
-    lateinit var navigationView: NavigationView
+    lateinit var lAuth: FirebaseAuth
+    lateinit var cardHabit: CardView
+    lateinit var chatId: CardView
+
+    lateinit var cardArticles: CardView
+    lateinit var cardWorkout: CardView
+    lateinit var cardRun: CardView
+    lateinit var profile: CardView
+    lateinit var bmi: CardView
+    lateinit var fitVideo: CardView
+
+    lateinit var progressBar: ProgressBar
+    lateinit var progress: RelativeLayout
+
+    lateinit var sliderView: SliderView
+    var images = intArrayOf(
+        R.drawable.covida_img,
+        R.drawable.oip,
+        R.drawable.covidb_img,
+        R.drawable.covidc_img,
+        R.drawable.covide_img,
+        R.drawable.covidr_img
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        toolbar = findViewById(R.id.toolbar)
-        chatId = findViewById(R.id.chatId)
-        cardHabit=findViewById(R.id.cardHabit)
-        fitVideo = findViewById(R.id.fitVideo)
-        drawerLayout = findViewById(R.id.drawerLayout)
-        navigationView = findViewById(R.id.navigationView)
-        profile = findViewById(R.id.profile)
-        lAuth = FirebaseAuth.getInstance()
-        cardHabit.setOnClickListener {
-            val intent = Intent(this, HabitActivity::class.java)
-            startActivity(intent)
-        }
+        showView()
 
-
-
-
-
-
-
-
-
-
-
-        fitVideo.setOnClickListener {
-            val intent = Intent(this, FitnessActivity::class.java)
-            startActivity(intent)
-        }
-
-
-        chatId.setOnClickListener {
-            val intent = Intent(this, ChatActivity::class.java)
-            startActivity(intent)
-        }
-        profile.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-
-
+        cardClicks()
         setUpToolbar()
-        val actionBarDrawerToggle = ActionBarDrawerToggle(
-            this@MainActivity,
-            drawerLayout, R.string.open_drawer,
-            R.string.close_drawer
-        )
-        drawerLayout.addDrawerListener(actionBarDrawerToggle)
-        actionBarDrawerToggle.syncState()
+        R.string.close_drawer
 
 
     }
@@ -91,9 +83,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val item = item.itemId
 
-        if (item == android.R.id.home) {
-            drawerLayout.openDrawer(GravityCompat.START)
-        }
+
         when (item) {
             R.id.log_out -> {
                 val dialog = AlertDialog.Builder(this)
@@ -112,6 +102,26 @@ class MainActivity : AppCompatActivity() {
                 }
                     .create().show()
             }
+            R.id.about -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+            }
+            R.id.policy -> {
+
+                val intent = Intent(this, PolActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+            }
+
+            R.id.team -> {
+
+                val intent = Intent(this, TActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+            }
+
         }
         return true
     }
@@ -119,9 +129,128 @@ class MainActivity : AppCompatActivity() {
     fun setUpToolbar() {
         setSupportActionBar(toolbar)
         supportActionBar?.title = "DASHBOARD"
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
+    fun showView() {
+        progressBar = findViewById(R.id.progressBar)
+        sliderView = findViewById(R.id.s)
 
+        progress = findViewById(R.id.progress)
+        progressBar.visibility = View.VISIBLE
+        progress.visibility = View.VISIBLE
+        bmi = findViewById(R.id.bmi)
+        cardArticles = findViewById(R.id.cardArticles)
+        cardRun = findViewById(R.id.cardRun)
+        cardCovid = findViewById(R.id.cardCovid)
+
+        cardWorkout = findViewById(R.id.cardWorkout)
+
+    }
+
+    fun cardClicks() {
+        cardWorkout.setOnClickListener {
+
+
+            val intent = Intent(this, WorkoutActivity::class.java)
+            startActivity(intent)
+
+            overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+        }
+        cardCovid.setOnClickListener {
+            val intent = Intent(this, CovidActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+        }
+
+        cardRun.setOnClickListener {
+            val intent = Intent(this, StepActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+
+        }
+
+        val sliderAdapter = SliderAdapter(images)
+
+        sliderView.setSliderAdapter(sliderAdapter)
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
+        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
+        sliderView.startAutoCycle()
+
+
+
+
+        cardArticles.setOnClickListener {
+
+            val intent = Intent(this, ArticlesActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+        }
+
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(3000)
+            progressBar.visibility = View.GONE
+            progress.visibility = View.GONE
+        }
+
+        toolbar = findViewById(R.id.toolbar)
+        chatId = findViewById(R.id.chatId)
+
+        cardHabit = findViewById(R.id.cardHabit)
+
+        fitVideo = findViewById(R.id.fitVideo)
+
+        profile = findViewById(R.id.profile)
+        lAuth = FirebaseAuth.getInstance()
+
+        bmi.setOnClickListener {
+
+            val intent = Intent(this, BmiActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+
+        }
+        cardHabit.setOnClickListener {
+            val intent = Intent(this, HabitActivity::class.java)
+
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+        }
+
+
+
+
+
+
+
+
+
+        fitVideo.setOnClickListener {
+            val intent = Intent(this, FitnessActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+        }
+
+
+        chatId.setOnClickListener {
+            val intent = Intent(this, ChatActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+        }
+        profile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_r, R.anim.slide_out_l)
+
+        }
+
+
+    }
 }
