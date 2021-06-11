@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.candroid.realtracker.R
+import com.candroid.realtracker.habittracker.util.Calculations
 
 class RecyclerAdapter(var habitList: List<Habit>): RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>() {
 

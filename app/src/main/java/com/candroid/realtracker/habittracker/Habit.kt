@@ -10,7 +10,7 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "habit_table")
 data class Habit(
     @PrimaryKey(autoGenerate = true)
-    var id:Int=0,
+    var id:Int,
     @ColumnInfo(name="habit_title") var  habit_title:String,
     @ColumnInfo(name="habit_des")  var habit_description:String,
     @ColumnInfo(name="habit_st")  var habit_startTime:String,

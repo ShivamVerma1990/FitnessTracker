@@ -1,9 +1,15 @@
+@file:Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+
+package com.candroid.realtracker.habittracker.util
+
+import android.annotation.SuppressLint
 import java.sql.Date
 import java.sql.Timestamp
 import java.text.SimpleDateFormat
 
 object Calculations {
 
+    @SuppressLint("SimpleDateFormat")
     fun calculateTimeBetweenDates(startDate: String): String {
 
         val endDate = timeStampToString(System.currentTimeMillis())
@@ -65,7 +71,7 @@ object Calculations {
 
         if (_month < 9) { //Because the month instance we retrieve starts at 0 and it's stupid!
             month = "0${_month + 1}"
-        } else if (_month >= 9 && _month <= 11) {
+        } else if (_month in 9..11) {
             month = (_month + 1).toString()
         }
 

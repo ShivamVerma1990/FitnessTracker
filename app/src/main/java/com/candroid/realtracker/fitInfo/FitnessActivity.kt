@@ -10,4 +10,9 @@ class FitnessActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fitness)
     }
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_in_l, R.anim.slide_out_r)
+    }
+
 }

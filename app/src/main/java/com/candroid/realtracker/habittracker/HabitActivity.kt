@@ -11,4 +11,9 @@ class HabitActivity : AppCompatActivity() {
 
 
     }
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_in_l, R.anim.slide_out_r)
+    }
+
 }

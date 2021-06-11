@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <item
-            android:title="Privacy policy"
 
-            android:id="@+id/home"/>
-        <item
-            android:title="Team"
-
-            android:id="@+id/profile"/>
-        <item
-            android:title="About"
-
-            android:id="@+id/favriout"/>
 
     </group>
 </menu>

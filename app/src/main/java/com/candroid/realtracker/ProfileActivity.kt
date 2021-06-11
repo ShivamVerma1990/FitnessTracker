@@ -33,10 +33,10 @@ mAuth= FirebaseAuth.getInstance()
             override fun onDataChange(snapshot: DataSnapshot) {
                 val users=snapshot.getValue(User::class.java)
                 gender.text=users!!.gender
-                profileEmail.text=users!!.email
-                profileName.text=users!!.name
-                profileAddress.text= users!!.address
-                profileweight.text=users!!.weight
+                profileEmail.text= users.email
+                profileName.text= users.name
+                profileAddress.text= users.address
+                profileweight.text= users.weight
 
 
 
@@ -54,5 +54,8 @@ mAuth= FirebaseAuth.getInstance()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_in_l, R.anim.slide_out_r)
+    }
 }

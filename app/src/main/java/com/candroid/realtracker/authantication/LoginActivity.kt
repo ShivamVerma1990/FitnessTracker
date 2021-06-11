@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.EditText
+
 import android.widget.ImageView
 import android.widget.Toast
 import com.candroid.realtracker.MainActivity
 import com.candroid.realtracker.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.core.view.View
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_ragister.*
@@ -48,14 +50,19 @@ lateinit var img:ImageView
             if(validateNumber()) {
                 val email = inputEmailsl.editText?.text.toString().trim()
                 val pass = editLock.editText?.text.toString().trim()
+button.visibility=android.view.View.INVISIBLE
                 lAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
                     if (it.isSuccessful) {
+                       button.visibility=android.view.View.VISIBLE
+
                         Toast.makeText(this, "LOADING......", Toast.LENGTH_SHORT).show()
 
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
+                        button.visibility=android.view.View.VISIBLE
+
                         Toast.makeText(this, "INVALID PASSWORD OR EMAIL", Toast.LENGTH_SHORT).show()
 
                     }

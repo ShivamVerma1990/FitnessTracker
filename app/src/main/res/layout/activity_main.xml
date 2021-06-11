@@ -1,396 +1,504 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-<androidx.drawerlayout.widget.DrawerLayout
-    android:id="@+id/drawerLayout"
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-    tools:context=".MainActivity">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:elevation="0dp"
-            android:id="@+id/appBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark">
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-app:titleTextColor="#ffffff"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                android:background="#2B028E"
-                app:layout_scrollFlags="enterAlways"
-                />
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <FrameLayout
-            android:id="@+id/frame"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            />
-
-        <ScrollView
-            android:layout_below="@+id/toolbar"
-            android:id="@+id/scroll"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+ android:background="#1E1D1D"
+    android:layout_height="match_parent">
 
 
-            android:layout_margin="1dp"
-            android:layout_marginTop="1dp"
-            android:orientation="vertical"
-
-            >
-
-            <LinearLayout
-
-                android:id="@+id/txt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/toolbar_main"
-                android:orientation="vertical">
-
-
-
-
-                <GridLayout
-                    android:layout_marginTop="56dp"
-                    android:id="@+id/grid"
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alignmentMode="alignMargins"
-                    android:columnCount="2"
-                    android:minHeight="900dp"
-                    android:padding="14dp"
-                    android:rowCount="3">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/chatId"
-
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:backgroundTint="#ffff"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/chatbot" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-
-                                android:text="HELPER"
-                                android:textAlignment="center"
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:src="@drawable/diet" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:text="Diet Planner"
-                                android:textAlignment="center"
-
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
-
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:src="@drawable/exercise" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Running Tracer"
-                                android:textAlignment="center"
-
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="2dp"
-                        android:layout_height="2dp"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_marginLeft="16dp"
-
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:src="@drawable/training" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:text="WorkoutSchedule"
-                                android:textAlignment="center"
-
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                  android:id="@+id/cardHabit"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_rowWeight="1"
-
-                        android:layout_columnWeight="1"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:src="@drawable/tracker" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:text="Habit Tracker"
-                                android:textAlignment="center"
-
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/profile"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_marginLeft="16dp"
-
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#2B028E"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                    app:layout_scrollFlags="enterAlways"
+                    app:titleTextColor="#ffffff" />
+
+            <ScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/toolbar"
+
+
+                android:layout_margin="1dp"
+                android:layout_marginTop="1dp"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+
+                    android:id="@+id/txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/toolbar_main"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+
+android:layout_gravity="center_horizontal"
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="360dp"
+                        android:layout_height="320dp"
+                        android:layout_marginTop="60dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+                        <androidx.cardview.widget.CardView
+                      android:backgroundTint="#2c2c2c"
+                            android:id="@+id/cardCovid"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <com.smarteist.autoimageslider.SliderView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="5dp"
+                                    android:id="@+id/s"
+                                    app:sliderAnimationDuration="600"
+                                    app:sliderAutoCycleDirection="back_and_forth"
+                                    app:sliderAutoCycleEnabled="true"
+                                    app:sliderIndicatorAnimationDuration="600"
+                                    app:sliderIndicatorGravity="center_horizontal"
+                                    app:sliderIndicatorMargin="15dp"
+                                    app:sliderIndicatorOrientation="horizontal"
+                                    app:sliderIndicatorRadius="2dp"
+                                    app:sliderIndicatorSelectedColor="#5a5a5a"
+                                    app:sliderIndicatorUnselectedColor="#fff"
+                                    app:sliderScrollTimeInSec="2"
+                                    app:sliderStartAutoCycle="true" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout14"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="22dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+                        <androidx.cardview.widget.CardView
+
+                            android:id="@+id/chatId"                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:backgroundTint="#2c2c2c"
+
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_gravity="center"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/chatbot" />
+
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:elevation="4dp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:padding="6dp"
+                                    android:text="Helper"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/bmi"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            app:cardCornerRadius="8dp"
+                            android:backgroundTint="#2c2c2c"
+
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_gravity="center"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/bmi_logo" />
+
+
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:elevation="4dp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:padding="6dp"
+                                    android:text="BMI Calculator"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout13"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="22dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardRun"
+                            android:layout_width="0dp"
+                            android:backgroundTint="#2c2c2c"
+
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_gravity="center"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/run" />
+
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:elevation="4dp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:padding="6dp"
+                                    android:text="Step Counter"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardArticles"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:backgroundTint="#2c2c2c"
+
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_gravity="center"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/article" />
+
+
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:elevation="4dp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:padding="6dp"
+                                    android:text="View Articles"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout12"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="22dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+                        <androidx.cardview.widget.CardView
+
+                            android:id="@+id/cardHabit"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:backgroundTint="#2c2c2c"
+
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_gravity="center"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/tracker" />
+
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:elevation="4dp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:padding="6dp"
+                                    android:text="Habit Tracker"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+
+                            android:id="@+id/profile"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#2c2c2c"
+
+                            android:padding="10dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_gravity="center"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/runner" />
+
+
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:elevation="4dp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:padding="6dp"
+                                    android:text="Profile"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout19"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="22dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/fitVideo"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:backgroundTint="#2c2c2c"
+
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_gravity="center"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/video" />
+
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:elevation="4dp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:padding="6dp"
+                                    android:text="Fitness Video"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardWorkout"
+                            android:layout_width="0dp"
+                            android:backgroundTint="#2c2c2c"
+
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:scaleType="centerCrop"
+                                    android:layout_gravity="center"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/fitness" />
+
+
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:elevation="4dp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:padding="6dp"
+                                    android:text="7 MIN WORKOUT"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
 
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:src="@drawable/runner" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:text="Profile"
-                                android:textAlignment="center"
 
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fitVideo"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
 
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:layout_margin="16dp"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:src="@drawable/video" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:text="Fitness Video"
-                                android:textAlignment="center"
-
-                                android:textColor="#000000"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                </GridLayout>
-            </LinearLayout>
-        </ScrollView>
-
-
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView"
-
-        android:layout_width="270dp"
-        android:layout_height="match_parent"
-        app:itemTextAppearance="@style/Widget.AppCompat.PopupMenu"
-        app:menu="@menu/menu_item"
-        app:headerLayout="@layout/herdar"
-        android:layout_gravity="start"
-        />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</androidx.drawerlayout.widget.DrawerLayout>
     <RelativeLayout
         android:id="@+id/progress"
         android:layout_width="match_parent"
-        android:background="#ffffff"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#2c2c2c"
+        >
+
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            />
+            android:layout_centerInParent="true" />
 
     </RelativeLayout>
 </RelativeLayout>
+
+
+
+
+

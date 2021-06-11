@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.candroid.realtracker">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -11,10 +12,25 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-       >
+        android:theme="@style/AppTheme">
+        <activity android:name=".optionfragment.PolActivity"></activity>
+        <activity android:name=".optionfragment.TActivity" />
+        <activity android:name=".optionfragment.AboutActivity" />
+        <activity android:name=".optionfragment.FrameActivity" />
+        <activity android:name=".workout.FinishActivity" />
+        <activity android:name=".workout.ExerciseActivity" />
+        <activity android:name=".workout.WorkoutActivity" />
+        <activity
+            android:name=".stepCounter.StepActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".stepcounter.ui.StepActivity" />
+        <activity android:name=".articales.CovidActivity" />
+        <activity
+            android:name=".articales.ArticlesActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".bmical.ResultOfBmiActivity" />
+        <activity android:name=".bmical.BmiActivity" />
         <activity android:name=".habittracker.HabitActivity" />
-
         <activity android:name=".fitInfo.FitnessActivity" />
         <activity android:name=".ProfileActivity" />
         <activity
@@ -35,6 +51,10 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".stepcounter.service.StepDetectorService"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>

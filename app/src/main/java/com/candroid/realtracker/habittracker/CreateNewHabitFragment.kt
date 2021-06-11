@@ -1,14 +1,17 @@
 package com.candroid.realtracker.habittracker
 
-import Calculations
+import com.candroid.realtracker.habittracker.util.Calculations
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -25,69 +28,95 @@ class CreateNewHabitFragment : Fragment(R.layout.fragment_create_new_habit),
     TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
 
 
-    lateinit var habitViewModel: HabitViewModel
-    var titles = ""
-    var description = ""
-    var timeStampHabit = ""
-    var drawerSelected = 0
-    var day = 0
-    var month = 0
-    var year = 0
-    var hour = 0
-    var minute = 0
-    var cleanTime = ""
-    var cleanDate = ""
+    private var titles = ""
+    private var description = ""
+    private var drawableSelected = 0
+  private var timeStampHabit = ""
 
+    private lateinit var habitViewModel: HabitViewModel
+
+    private var day = 0
+    private var month = 0
+    private var year = 0
+    private var hour = 0
+    private var minute = 0
+
+    private var cleanDate = ""
+    private var cleanTime = ""
+
+
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+
         val db = HabitDatabase(activity as Context)
         val habitRepository = HabitRepository(db)
         val factory = ViewModelFactory(habitRepository)
         habitViewModel = ViewModelProvider(this, factory).get(HabitViewModel::class.java)
 
 
-
-
-
-
-
+        //Add habit to database
         btn_confirm_create.setOnClickListener {
-            habitDb()
+            addHabitToDB()
         }
-
-        drawerSelecteds()
+        //Pick a date and time
         pickDateAndTime()
 
+        //Selected and image to put into our list
+        drawableSelected()
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
+    //set on click listeners for our data and time pickers
     private fun pickDateAndTime() {
         btnPickDate.setOnClickListener {
-            getDate()
+            getDateCalendar()
             DatePickerDialog(requireContext(), this, year, month, day).show()
         }
+
         btnPickTime.setOnClickListener {
-            getTime()
+            getTimeCalendar()
             TimePickerDialog(context, this, hour, minute, true).show()
-
         }
-
     }
 
-    private fun drawerSelecteds() {
+    private fun addHabitToDB() {
 
+        //Get text from editTexts
+        titles = inputTitle.editText?.text.toString().trim()
+        description = etHabitDescription.editText?.text.toString().trim()
+        timeStampHabit = "$cleanDate $cleanTime"
+        //Create a timestamp string for our recyclerview
+        timeStampHabit = "$cleanDate $cleanTime"
+
+        //Check that the form is complete before submitting data to the database
+        if (!(titles.isEmpty() || description.isEmpty() || timeStampHabit.isEmpty() || drawableSelected == 0)) {
+            val habit = Habit(0, titles, description, timeStampHabit, drawableSelected)
+
+            //add the habit if all the fields are filled
+            habitViewModel.insertHabit(habit)
+            Toast.makeText(context, "Habit created successfully!", Toast.LENGTH_SHORT).show()
+
+            //navigate back to our home fragment
+            findNavController().navigate(R.id.action_createNewHabitFragment_to_habitHomeFragment)
+        } else {
+            Toast.makeText(context, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    // Create a selector for our icons which will appear in the recycler view
+    private fun drawableSelected() {
         ivFastFoodSelected.setOnClickListener {
             ivFastFoodSelected.isSelected = !ivFastFoodSelected.isSelected
-            drawerSelected = R.drawable.fast_food_s
+            drawableSelected = R.drawable.fast_food_s
 
             //de-select the other options when we pick an image
             ivSmokingSelected.isSelected = false
             ivTeaSelected.isSelected = false
-
         }
 
         ivSmokingSelected.setOnClickListener {
             ivSmokingSelected.isSelected = !ivSmokingSelected.isSelected
-            drawerSelected = R.drawable.hot_cup
+            drawableSelected = R.drawable.hot_cup
 
             //de-select the other options when we pick an image
             ivFastFoodSelected.isSelected = false
@@ -96,7 +125,7 @@ class CreateNewHabitFragment : Fragment(R.layout.fragment_create_new_habit),
 
         ivTeaSelected.setOnClickListener {
             ivTeaSelected.isSelected = !ivTeaSelected.isSelected
-            drawerSelected = R.drawable.no_smoking_k
+            drawableSelected = R.drawable.no_smoking_k
 
             //de-select the other options when we pick an image
             ivFastFoodSelected.isSelected = false
@@ -106,48 +135,34 @@ class CreateNewHabitFragment : Fragment(R.layout.fragment_create_new_habit),
 
     }
 
+    //get the time set
+    override fun onTimeSet(TimePicker: TimePicker?, p1: Int, p2: Int) {
+        Log.d("Fragment", "Time: $p1:$p2")
 
-    private fun habitDb() {
-        titles = inputTitle.editText?.text.toString().trim()
-        description = etHabitDescription.editText?.text.toString().trim()
-        timeStampHabit = "$cleanDate $cleanTime"
-        if (!(titles.isEmpty() || description.isEmpty() || timeStampHabit.isEmpty() || drawerSelected == 0)) {
-            val habit = Habit(0,titles, description, timeStampHabit, drawerSelected)
-            habitViewModel.insertHabit(habit)
-            Toast.makeText(context, "Successfully add your habit!", Toast.LENGTH_LONG).show()
-            findNavController().navigate(R.id.action_createNewHabitFragment_to_habitHomeFragment)
-        } else {
-
-            Toast.makeText(context, "Please fill all the fields", Toast.LENGTH_SHORT).show()
-
-        }
-
-
+        cleanTime = Calculations.cleanTime(p1, p2)
+        tvTimeSelected.text = "Time: $cleanTime"
     }
 
-    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-        cleanTime = Calculations.cleanTime(hourOfDay, minute)
-        tvTimeSelected.text = "TIME:$cleanTime"
+    //get the date set
+    override fun onDateSet(p0: DatePicker?, yearX: Int, monthX: Int, dayX: Int) {
+
+        cleanDate = Calculations.cleanDate(dayX, monthX, yearX)
+        tvDateSelected.text = "Date: $cleanDate"
     }
 
-    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        cleanDate = Calculations.cleanDate(dayOfMonth, month, year)
-        tvDateSelected.text = "DATE:$cleanDate"
-
-    }
-
-    fun getDate() {
-        val cal = Calendar.getInstance()
-        day = cal.get(Calendar.DAY_OF_MONTH)
-        month = cal.get(Calendar.MONTH)
-        year = cal.get(Calendar.YEAR)
-    }
-
-    fun getTime() {
+    //get the current time
+    private fun getTimeCalendar() {
         val cal = Calendar.getInstance()
         hour = cal.get(Calendar.HOUR_OF_DAY)
         minute = cal.get(Calendar.MINUTE)
     }
 
+    //get the current date
+    private fun getDateCalendar() {
+        val cal = Calendar.getInstance()
+        day = cal.get(Calendar.DAY_OF_MONTH)
+        month = cal.get(Calendar.MONTH)
+        year = cal.get(Calendar.YEAR)
+    }
 }
 

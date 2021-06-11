@@ -4,12 +4,14 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -18,6 +20,7 @@ import com.candroid.realtracker.habittracker.habit_database.HabitDatabase
 import com.candroid.realtracker.habittracker.habitrepo.HabitRepository
 import com.candroid.realtracker.habittracker.habitrepo.ViewModelFactory
 import com.candroid.realtracker.habittracker.ui.HabitViewModel
+import com.candroid.realtracker.habittracker.util.Calculations
 import kotlinx.android.synthetic.main.fragment_update_habit.*
 import java.util.*
 
@@ -37,6 +40,7 @@ class UpdateHabitFragment : Fragment(R.layout.fragment_update_habit) , TimePicke
     var cleanDate = ""
     lateinit var habitViewModel: HabitViewModel
     private val args by navArgs<UpdateHabitFragmentArgs>()
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val db = HabitDatabase(activity as Context)
         val habitRepository = HabitRepository(db)
@@ -46,13 +50,13 @@ class UpdateHabitFragment : Fragment(R.layout.fragment_update_habit) , TimePicke
         etHabitDescriptionUpdate.editText?.setText(args.selectedHabit.habit_description)
         drawableSelected()
         pickTime()
-        setHasOptionsMenu(true)
+       // setHasOptionsMenu(true)
         btnConfirmUpdate.setOnClickListener {
             titles=etHabitTitleUpdate.editText?.text.toString().trim()
             descriptions=etHabitDescriptionUpdate.editText?.text.toString().trim()
             timeStamps="$cleanDate $cleanTime"
             if( !(titles.isEmpty()||descriptions.isEmpty()||timeStamps.isEmpty()||drawableSelecteds==0)) {
-                var habit= Habit(1,titles,descriptions,timeStamps,drawableSelecteds)
+                var habit= Habit(args.selectedHabit.id,titles,descriptions,timeStamps,drawableSelecteds)
                 habitViewModel.updateHabit(habit)
                 Toast.makeText(context, "Successfully update your habit!", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_updateHabitFragment_to_habitHomeFragment)
@@ -115,7 +119,7 @@ class UpdateHabitFragment : Fragment(R.layout.fragment_update_habit) , TimePicke
         }
 
     }
-
+    @RequiresApi(Build.VERSION_CODES.N)
     fun pickTime() {
         btnPickDateUpdate.setOnClickListener {
             getDate()

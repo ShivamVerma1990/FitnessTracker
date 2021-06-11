@@ -157,6 +157,9 @@ class ChatActivity : AppCompatActivity() {
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
-
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_in_l, R.anim.slide_out_r)
+    }
 
 }
