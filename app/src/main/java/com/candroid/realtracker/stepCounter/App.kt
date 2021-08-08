@@ -2,6 +2,7 @@ package com.candroid.realtracker.stepCounter
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.ContextWrapper
 import android.os.Build
 
 class App : android.app.Application() {
@@ -9,6 +10,12 @@ class App : android.app.Application() {
     override fun onCreate() {
         super.onCreate()
 
+        PrefsHelper.Builder()
+            .setContext(this)
+            .setMode(ContextWrapper.MODE_PRIVATE)
+            .setPrefsName("mPrefs")
+            .setUseDefaultSharedPreference(true)
+            .build();
 
         createNotificationChannel()
     }

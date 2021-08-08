@@ -6,6 +6,7 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.candroid.realtracker.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_forget.*
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_ragister.*
 class ForgetActivity : AppCompatActivity() {
 lateinit var fEmail:EditText
     lateinit var button: Button
+    lateinit var toolbar: Toolbar
     lateinit var fAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,34 +23,46 @@ lateinit var fEmail:EditText
   fAuth= FirebaseAuth.getInstance()
     fEmail=findViewById(R.id.inputEmailsf)
         button=findViewById(R.id.button)
+        toolbar = findViewById(R.id.toolbar)
+        setUpToolbar()
         button.setOnClickListener {
-            val fEmail=inputEmailsf.text.toString()
+            val fEmail=inputEmailsf.text.toString().trim()
             if (fEmail.isEmpty()) {
 
-                inputEmails.error = "email empty"
-                inputEmails.requestFocus()
-                return@setOnClickListener
+                inputEmailsf.error = "email empty"
+                inputEmailsf.requestFocus()
             }
-            if (!Patterns.EMAIL_ADDRESS.matcher(fEmail).matches()) {
-                inputEmails.error = "Wrong email pattern"
-                inputEmails.requestFocus()
-                return@setOnClickListener
+            else if (!Patterns.EMAIL_ADDRESS.matcher(fEmail).matches()) {
+                inputEmailsf.error = "Wrong email pattern"
+                inputEmailsf.requestFocus()
+            }
+            else{
+                fAuth.sendPasswordResetEmail(fEmail).addOnCompleteListener(this) {
+                    if(it.isSuccessful){
+                        Toast.makeText(this,"Check your email please", Toast.LENGTH_SHORT).show()
+
+                    }
+                    else{
+                        Toast.makeText(this," Try Again!!something wrong", Toast.LENGTH_SHORT).show()
+
+                    }
+
+                }
+
+
             }
 
 
-fAuth.sendPasswordResetEmail(fEmail).addOnCompleteListener(this) {
-    if(it.isSuccessful){
-        Toast.makeText(this,"Check your email please", Toast.LENGTH_SHORT).show()
 
-    }
-else{
-        Toast.makeText(this," Try Again!!something wrong", Toast.LENGTH_SHORT).show()
-
-    }
-
-}
         }
     }
+    fun setUpToolbar() {
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "Back"
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
     override fun finish() {
         super.finish()
         overridePendingTransition(R.anim.slide_in_l,R.anim.slide_out_r)

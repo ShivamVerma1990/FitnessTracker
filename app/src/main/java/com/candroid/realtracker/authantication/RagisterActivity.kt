@@ -7,9 +7,9 @@ import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.candroid.realtracker.MainActivity
+import com.candroid.realtracker.workout.MainActivity
 import com.candroid.realtracker.R
-import com.candroid.realtracker.User
+import com.candroid.realtracker.module.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase

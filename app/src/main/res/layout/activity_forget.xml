@@ -6,41 +6,26 @@
     android:layout_height="match_parent"
   android:background="#2AC6BDBB"
     tools:context=".authantication.RagisterActivity">
-    <View
-        android:id="@+id/view"
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-
-        android:background="#E22B2524"/>
-
-    <View
-        android:layout_below="@+id/view"
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/ic_wave"
-        />
-
-    <ImageView
-        android:layout_width="103dp"
-        android:layout_height="101dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="26dp"
-        android:scaleType="centerCrop"
-/>
-    <TextView
-        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextColor="#000000" />
+
+    <TextView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="23dp"
         android:padding="10dp"
         android:text="RESET YOUR PASSWORD!!"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:textSize="27sp"
         android:textStyle="bold" />
 
@@ -59,21 +44,20 @@
 
     <EditText
         android:id="@+id/inputEmailsf"
-        android:maxLength="30"
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
+
         android:layout_marginStart="32dp"
         android:layout_marginTop="272dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/roundy"
         android:drawableStart="@drawable/ic_email"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:background="@drawable/roundy"
         android:hint="Email"
         android:inputType="text"
-        android:padding="16dp"
-        />
+        android:maxLength="30"
+        android:padding="16dp" />
 
 
 </RelativeLayout>

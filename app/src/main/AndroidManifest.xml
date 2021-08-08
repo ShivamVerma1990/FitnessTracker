@@ -5,56 +5,134 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-feature
+        android:name="android.hardware.sensor.pedometer"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
 
     <application
+        android:name=".stepCounter.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/real_tracker_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/real_tracker_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".optionfragment.PolActivity"></activity>
-        <activity android:name=".optionfragment.TActivity" />
-        <activity android:name=".optionfragment.AboutActivity" />
-        <activity android:name=".optionfragment.FrameActivity" />
-        <activity android:name=".workout.FinishActivity" />
-        <activity android:name=".workout.ExerciseActivity" />
-        <activity android:name=".workout.WorkoutActivity" />
         <activity
-            android:name=".stepCounter.StepActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".stepcounter.ui.StepActivity" />
-        <activity android:name=".articales.CovidActivity" />
-        <activity
-            android:name=".articales.ArticlesActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".bmical.ResultOfBmiActivity" />
-        <activity android:name=".bmical.BmiActivity" />
-        <activity android:name=".habittracker.HabitActivity" />
-        <activity android:name=".fitInfo.FitnessActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity
-            android:name=".chatbot.ChatActivity"
-            android:parentActivityName=".chatbot.ChatActivity" />
-        <activity android:name=".intro.IntroActivity">
+            android:name=".habittracker.util.SplashActivity"
+
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".authantication.ForgetActivity" />
-        <activity android:name=".authantication.LoginActivity" />
-        <activity android:name=".authantication.RagisterActivity" />
-        <activity android:name=".MainActivity" />
+
+        <activity android:name=".optionfragment.PolActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+
+            />
+        <activity android:name=".optionfragment.TActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".optionfragment.AboutActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".workout.FinishActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".workout.ExerciseActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".workout.WorkoutActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".stepCounter.StepActivity"
+            android:parentActivityName=".workout.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".articales.CovidActivity"  android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".articales.ArticlesActivity"
+            android:parentActivityName=".workout.MainActivity"  android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".bmical.ResultOfBmiActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".bmical.BmiActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".habittracker.HabitActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".fitInfo.FitnessActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".workout.ProfileActivity"
+            android:parentActivityName=".workout.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".chatbot.ChatActivity"
+            android:parentActivityName=".chatbot.ChatActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".intro.IntroActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+
+
+        <activity android:name=".authantication.ForgetActivity"
+            android:parentActivityName=".authantication.LoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".authantication.LoginActivity"  android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".authantication.RagisterActivity"
+            android:parentActivityName=".authantication.LoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".workout.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
         <service
-            android:name=".stepcounter.service.StepDetectorService"
+            android:name=".stepCounter.StepDetectorService"
             android:label="@string/app_name" />
+        <receiver android:name=".brodcastreciver.AlarmReceiver"/>
+
     </application>
 
 </manifest>

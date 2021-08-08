@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/bg_gredient.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/buttonbackground.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/cardbackgroung.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/coffe_select.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_about.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_arrow_back_black_24dp.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_baseline_scatter_plot_24.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_baseline_smoking.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_bmi.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_calute.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_delete.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_info_outline_black_24dp.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_keyboard_backspace_black_24dp.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_policy.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_team.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_undraw_activity_tracker_re.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_undraw_fitness_tracker.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_undraw_my_app.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/ic_wave.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/round_shape_habit.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/send_round_box.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/shape_chat.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/smokin_selcted.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/drawable/tea_selected.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/activity_bmi.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/activity_forget.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/activity_habit.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/activity_ragister.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/activity_result_of_bmi.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/activity_step.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_about.xml" value="0.16" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_b.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_back.xml" value="0.16" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_biceps.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_cardio.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_create_new_habit.xml" value="0.16" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_leg.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_options.xml" value="0.14930555555555555" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_policy.xml" value="0.128" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_solder.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_triceps.xml" value="0.16" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/fragment_update_habit.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/layout/list_of_habit.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/menu/menu_item.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/menu/nav_menu.xml" value="0.1" />
+        <entry key="..\:/New folder (2)/RealTracker/app/src/main/res/menu/nav_menu_delete.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

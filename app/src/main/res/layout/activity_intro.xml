@@ -35,7 +35,7 @@
         android:layout_above="@id/text_ex"
         android:layout_margin="20dp"
         android:background="@drawable/round_shape"
-        android:text="Get Started"
+        android:text="@string/get_started"
         android:textColor="#ffffff"
         android:textStyle="bold" />
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:text="By continuing you agree to our privacy policy"
+        android:text="@string/by_continuing_you_agree_to_our_privacy_policy"
         android:textColor="#000000"
         android:textStyle="bold" />
 </RelativeLayout>

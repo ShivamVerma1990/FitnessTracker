@@ -1,6 +1,6 @@
 package com.candroid.realtracker.habittracker
 
-import com.candroid.realtracker.habittracker.util.Calculations
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
@@ -20,12 +20,16 @@ import com.candroid.realtracker.habittracker.habit_database.HabitDatabase
 import com.candroid.realtracker.habittracker.habitrepo.HabitRepository
 import com.candroid.realtracker.habittracker.habitrepo.ViewModelFactory
 import com.candroid.realtracker.habittracker.ui.HabitViewModel
+import com.candroid.realtracker.habittracker.util.Calculations
+import com.shivam.habittrakker.alarmservices.AlarmServices
 import kotlinx.android.synthetic.main.fragment_create_new_habit.*
 import java.util.*
 
 
 class CreateNewHabitFragment : Fragment(R.layout.fragment_create_new_habit),
     TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
+    lateinit var alarmServices: AlarmServices
+
 
 
     private var titles = ""
@@ -47,6 +51,7 @@ class CreateNewHabitFragment : Fragment(R.layout.fragment_create_new_habit),
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        alarmServices= context?.let { AlarmServices(it) }!!
 
         val db = HabitDatabase(activity as Context)
         val habitRepository = HabitRepository(db)
@@ -58,11 +63,26 @@ class CreateNewHabitFragment : Fragment(R.layout.fragment_create_new_habit),
         btn_confirm_create.setOnClickListener {
             addHabitToDB()
         }
+        imageView.setOnClickListener {
+            setAlarm { alarmServices.setRepetitiveAlarm(it) }
+
+
+            imageView.visibility=View.GONE
+            imageView2.visibility=View.VISIBLE
+            Toast.makeText(context,"yup!",Toast.LENGTH_LONG).show()
+        }
+
         //Pick a date and time
+
+
         pickDateAndTime()
 
         //Selected and image to put into our list
         drawableSelected()
+
+//        btn_pickDateAndTime.setOnClickListener {
+//            setAlarm { alarmServices.setRepetitiveAlarm(it) }
+//        }
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -164,5 +184,43 @@ class CreateNewHabitFragment : Fragment(R.layout.fragment_create_new_habit),
         month = cal.get(Calendar.MONTH)
         year = cal.get(Calendar.YEAR)
     }
-}
+
+
+    @SuppressLint("SetTextI18n")
+    fun setAlarm(callback:(Long)->Unit){
+        Calendar.getInstance().apply {
+            this.set(Calendar.SECOND, 0)
+            this.set(Calendar.MILLISECOND, 0)
+            context?.let {
+                DatePickerDialog(
+                    it,0,DatePickerDialog.OnDateSetListener { _, day, month, year->
+                        this.set(Calendar.MONTH,month)
+                        this.set(Calendar.YEAR,year)
+                        this.set(Calendar.DAY_OF_MONTH,day)
+                        TimePickerDialog(context,TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
+
+                            this.set(Calendar.MINUTE,minute)
+                            this.set(Calendar.HOUR_OF_DAY,hourOfDay)
+                            callback(this.timeInMillis)
+
+                            textv.text="DATE:$day/$month/$year TIME:$hourOfDay::$minute "
+                        },this.get(Calendar.HOUR_OF_DAY),
+                            this.get(Calendar.MINUTE),false).show()
+
+
+                    },
+                    this.get(Calendar.DAY_OF_MONTH),
+                    this.get(Calendar.WEEK_OF_YEAR),
+                    this.get(Calendar.DAY_OF_YEAR)
+
+                ).show()
+            }
+
+
+
+        }
+
+    }
+
+    }
 

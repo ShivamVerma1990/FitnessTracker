@@ -13,6 +13,7 @@ import com.candroid.realtracker.habittracker.habit_database.HabitDatabase
 import com.candroid.realtracker.habittracker.habitrepo.HabitRepository
 import com.candroid.realtracker.habittracker.habitrepo.ViewModelFactory
 import com.candroid.realtracker.habittracker.ui.HabitViewModel
+import com.candroid.realtracker.habittracker.util.RecyclerAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_habit_home.*
 

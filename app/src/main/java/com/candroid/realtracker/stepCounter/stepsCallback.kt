@@ -1,4 +1,4 @@
-package com.candroid.step20
+package com.candroid.realtracker.stepCounter
 
 interface stepsCallback {
 

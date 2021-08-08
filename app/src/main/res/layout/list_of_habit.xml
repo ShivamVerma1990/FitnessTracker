@@ -30,7 +30,8 @@
             android:layout_height="140dp"
             android:layout_margin="10dp"
             android:alpha=".1"
-            android:src="@drawable/hot_cup" />
+            android:src="@drawable/hot_cup"
+            android:contentDescription="@string/todo" />
 
 
         <LinearLayout
@@ -52,7 +53,7 @@
                     android:id="@+id/tv_item_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Title Big"
+                    android:text="@string/title_big"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
                     android:textSize="24sp" />

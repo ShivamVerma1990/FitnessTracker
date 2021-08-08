@@ -24,7 +24,7 @@ class ArticlesActivity : AppCompatActivity() {
     binding=DataBindingUtil.setContentView(this,R.layout.activity_articles)
 
 
-val url="https://fitindia.gov.in/"
+val url="https://timesofindia.indiatimes.com/life-style/health-fitness/diet/bodybuilding-diet-meal-plan-to-gain-weight/articleshow/27958703.cms"  //"https://fitindia.gov.in/"
 if(url!=null) {
 
     binding.we.settings.javaScriptEnabled = true

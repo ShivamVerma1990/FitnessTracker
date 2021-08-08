@@ -2,6 +2,12 @@
     <string name="app_name">RealTracker</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+
+        <string
+            name="messageWithLink"><a href="https://www.linkedin.com/in/shivam-verma-b8ba5118b/">Linkedin id :https://www.linkedin.com/in/shivam-verma-b8ba5118b/</a></string>
+
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="save">Save</string>
     <string name="bg">Bg</string>
@@ -21,4 +27,71 @@
     <string name="todos">TODO</string>
     <string name="image">image</string>
     <string name="todok">TODO</string>
+    <string name="log_out">Log out</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="team">Team</string>
+    <string name="about">About</string>
+    <string name="delete_everything">DELETE EVERYTHING</string>
+    <string name="delete">DELETE</string>
+    <string name="this_is_a_sample_message_that_will_appear">This is a sample message that will appear</string>
+    <string name="title_big">Title Big</string>
+    <string name="description_list">Description List</string>
+    <string name="description">Description</string>
+    <string name="delete_habit">Delete Habit</string>
+    <string name="update">Update</string>
+    <string name="policy">Policy</string>
+    <string name="cardio_workout">CARDIO WORKOUT</string>
+    <string name="back_workout">BACK WORKOUT</string>
+    <string name="leg_workout">LEG WORKOUT</string>
+    <string name="triceps_workout">TRICEPS WORKOUT</string>
+    <string name="baiceps_workout">BAICEPS WORKOUT</string>
+    <string name="chest_workout">CHEST WORKOUT</string>
+    <string name="fitness_videos">FITNESS VIDEOS</string>
+    <string name="add_a_habit">Add a habit!</string>
+    <string name="confirm">Confirm</string>
+    <string name="time_not_selected">Time: (not selected)</string>
+    <string name="pick_a_time">Pick a time</string>
+    <string name="date_not_selected">Date: (not selected)</string>
+    <string name="pick_a_date">Pick a date</string>
+    <string name="give_it_a_short_description">Give it a short description</string>
+    <string name="habit_title">Habit title</string>
+    <string name="select_remainder">SELECT REMAINDER</string>
+    <string name="start">Start</string>
+    <string name="today_s_burnt_calories">Today\'s Burnt Calories</string>
+    <string name="_0">0</string>
+    <string name="today_s_distance_covered">Today\'s Distance Covered</string>
+    <string name="_22">22</string>
+    <string name="gender">Gender</string>
+    <string name="your_bmi_category_is">Your BMI Category Is</string>
+    <string name="recalculate_your_bmi">RECALCULATE YOUR BMI</string>
+    <string name="sign_up">Sign Up!</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="others">Others</string>
+    <string name="register">REGISTER</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="renter_your_password">Renter your password</string>
+    <string name="enter_your_address">Enter your address</string>
+    <string name="enter_your_weight">Enter your weight</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="profile_name">Profile Name</string>
+    <string name="get_started">Get Started</string>
+    <string name="by_continuing_you_agree_to_our_privacy_policy">By continuing you agree to our privacy policy</string>
+    <string name="helper">Helper</string>
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="step_counter">Step Counter</string>
+    <string name="view_articles">View Articles</string>
+    <string name="habit_tracker">Habit Tracker</string>
+    <string name="profile">Profile</string>
+    <string name="fitness_video">Fitness Video</string>
+    <string name="_7_min_workout">7 MIN WORKOUT</string>
+    <string name="login_here">LOGIN HERE</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">FORGOT PASSWORD</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="solder_workout">SOLDER WORKOUT</string>
+    <string name="title_activity_splash">splashActivity</string>
+    <string name="thank_you_for_choosing_to_be_part_of_our_community_at_fitness_tacker_we_are_committed_to_protecting_your_personal_information_and_your_right_to_privacy_if_you_have_any_questions_or_concerns_about_our_policy_or_our_practices_with_regards_to_your_personal_information_please_contact_us_at_fitness12tracker_gmail_com_the_use_of_our_platform_which_includes_fitness_tracker_mobile_application_hereinafter_referred_to_as_mobile_application_is_possible_without_any_indication_of_personal_data_however_if_a_data_subject_wants_to_use_our_services_via_our_website_or_mobile_application_processing_of_personal_data_could_become_necessary_if_the_processing_of_personal_data_is_necessary_and_there_is_no_statutory_basis_for_such_processing_we_generally_obtain_consent_from_the_data_subject">Thank you for choosing to be part of our community at fitness tacker, We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at fitness12tracker@gmail.com .The use of our Platform which includes Fitness tracker Mobile Application (hereinafter referred to as “Mobile Application”) is possible without any indication of personal data; however, if a data subject wants to use our services via our website or mobile application, processing of personal data could become necessary. If the processing of personal data is necessary and there is no statutory basis for such processing, we generally obtain consent from the data subject.</string>
 </resources>

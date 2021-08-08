@@ -149,7 +149,7 @@ class UpdateHabitFragment : Fragment(R.layout.fragment_update_habit) , TimePicke
     }
 
 
-    private fun deleteUpdate(habit:Habit)
+    private fun deleteUpdate(habit: Habit)
     {
 
         val alertDailog= AlertDialog.Builder(context)
