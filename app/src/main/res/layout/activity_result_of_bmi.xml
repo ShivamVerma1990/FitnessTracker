@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,6 +9,7 @@
 
 
     <ImageView
+        android:contentDescription="@string/todo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -39,14 +39,14 @@
             android:background="@color/trans"
             android:textColor="@color/white"
             android:id="@+id/bmidisplay"
-            android:text="22">
+            android:text="@string/_22">
 
         </TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:text="@string/gender"
             android:layout_marginTop="15dp"
             android:textSize="17sp"
             android:textStyle="bold"
@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your BMI Category Is"
+            android:text="@string/your_bmi_category_is"
             android:textStyle="bold"
             android:id="@+id/bmicategorydispaly"
             android:textColor="@color/white"
@@ -86,7 +86,7 @@
         android:layout_below="@id/contentlayout"
         android:layout_marginTop="50dp"
         android:background="@drawable/buttonbackground"
-        android:text="RECALCULATE YOUR BMI"
+        android:text="@string/recalculate_your_bmi"
         android:textSize="15sp"
         android:textColor="@color/white"
         android:fontFamily="@font/raleway"

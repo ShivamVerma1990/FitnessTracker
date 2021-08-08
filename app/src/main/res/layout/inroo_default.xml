@@ -22,7 +22,7 @@ android:layout_margin="10dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:padding="2dp"
-        android:text="Discription List"
+        android:text="@string/description_list"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -33,6 +33,6 @@ android:layout_margin="10dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
         android:padding="2dp"
-        android:text="Discription"
+        android:text="@string/description"
         android:textColor="#000000" />
 </RelativeLayout>

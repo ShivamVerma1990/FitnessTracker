@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
-import com.candroid.realtracker.MainActivity
+import com.candroid.realtracker.workout.MainActivity
 import com.candroid.realtracker.R
 import com.candroid.realtracker.authantication.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -72,7 +72,7 @@ lateinit var iAuth: FirebaseAuth
     fun redirect(name:String){
         val intent=when(name){
             "LOGIN"->Intent(this,LoginActivity::class.java)
-"MAIN"-> Intent(this,MainActivity::class.java)
+"MAIN"-> Intent(this, MainActivity::class.java)
  else-> throw Exception("no path exists")
         }
 startActivity(intent)

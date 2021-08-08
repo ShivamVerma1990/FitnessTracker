@@ -25,21 +25,20 @@
                 android:layout_marginBottom="12dp"
                 android:layout_height="65dp"
                 android:src="@drawable/ic_baseline_calendar_today_24"
-                />
+                android:contentDescription="@string/todo" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="SELECT REMAINDER"
+                android:text="@string/select_remainder"
                 android:layout_marginBottom="19dp"
                 />
             <com.google.android.material.textfield.TextInputLayout
 
-                android:layout_centerInParent="true"
                 android:layout_width="390dp"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="Habit title "
+                android:hint="@string/habit_title"
                 app:hintTextColor="#000000"
                 android:layout_marginBottom="5dp"
                 app:boxStrokeColor="#000000"
@@ -64,12 +63,11 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_centerInParent="true"
                 android:layout_marginBottom="5dp"
                 android:layout_width="390dp"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint=" Give it a short description"
+                android:hint="@string/give_it_a_short_description"
                 app:hintTextColor="#000000"
                 app:boxStrokeColor="#000000"
                 app:boxStrokeWidthFocused="2dp"
@@ -98,7 +96,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:text="Pick a date"
+                android:text="@string/pick_a_date"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -107,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Date: (not selected)"
+                android:text="@string/date_not_selected"
                 android:textSize="19sp" />
 
             <Button
@@ -120,7 +118,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:text="Pick a time"
+                android:text="@string/pick_a_time"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -129,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Time: (not selected)"
+                android:text="@string/time_not_selected"
                 android:textSize="19sp" />
 
             <LinearLayout
@@ -144,7 +142,8 @@
                     android:layout_height="100dp"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/tea_selected" />
+                    android:src="@drawable/tea_selected"
+                    android:contentDescription="@string/todo" />
 
                 <ImageView
                     android:id="@+id/ivFastFoodSelectedUpdate"
@@ -160,7 +159,8 @@
                     android:layout_height="100dp"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/smokin_selcted" />
+                    android:src="@drawable/smokin_selcted"
+                    android:contentDescription="@string/todo" />
 
             </LinearLayout>
 
@@ -171,38 +171,40 @@
 
 
             </RelativeLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:weightSum="10"
-    android:layout_height="match_parent">
-            <Button
-   android:layout_weight="5"
-                android:id="@+id/btnConfirmUpdate"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:backgroundTint="#1A173A"
-                android:background="@drawable/round_shape"
-                android:text="Update"
-                android:textColor="@android:color/white" />
-    <Button
-        android:layout_weight="5"
-        android:id="@+id/btnDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:backgroundTint="#1A173A"
-        android:background="@drawable/round_shape"
-        android:text="Delete Habit"
-        android:textColor="@android:color/white" />
+                android:weightSum="10"
+                android:layout_height="match_parent">
+                <Button
+                    android:layout_weight="5"
+                    android:id="@+id/btnConfirmUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:backgroundTint="#1A173A"
+                    android:background="@drawable/round_shape"
+                    android:text="@string/update"
+                    android:textColor="@android:color/white"
+                    style="?android:attr/buttonBarButtonStyle" />
+                <Button
+                    android:layout_weight="5"
+                    android:id="@+id/btnDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:backgroundTint="#1A173A"
+                    android:background="@drawable/round_shape"
+                    android:text="@string/delete_habit"
+                    android:textColor="@android:color/white"
+                    style="?android:attr/buttonBarButtonStyle" />
 
-</LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 

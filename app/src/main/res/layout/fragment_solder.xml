@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.SolderFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgBackSolder"
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="32dp"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="@string/solder_workout"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPlus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                        android:id="@+id/videos"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        app:videoId="-QaBKOwsbWA"
+                        app:autoPlay="false"
+                        app:showYouTubeButton="true"
+                        app:handleNetworkEvents="true"
+
+                        app:enableLiveVideoUi="false"
+                        app:showVideoCurrentTime="true"
+                        app:showVideoDuration="true"
+                        app:showSeekBar="true"
+                        app:showFullScreenButton="true"
+
+                        />
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:textAlignment="center"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_below="@+id/videos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SOLDER WORKOUT FOR BEGINNER 1"
+                        android:textColor="@color/black"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black"/>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                        android:id="@+id/video2"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        app:videoId="EGrpZN7SyeU"
+                        app:autoPlay="false"
+                        app:showYouTubeButton="true"
+                        app:handleNetworkEvents="true"
+
+                        app:enableLiveVideoUi="false"
+                        app:showVideoCurrentTime="true"
+                        app:showVideoDuration="true"
+                        app:showSeekBar="true"
+                        app:showFullScreenButton="true"
+
+                        />
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:textAlignment="center"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_below="@+id/video2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SOLDER WORKOUT FOR BEGINNER2"
+                        android:textColor="@color/black"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                        android:id="@+id/video3"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        app:videoId="14RREmIgdb0"
+                        app:autoPlay="false"
+                        app:showYouTubeButton="true"
+                        app:handleNetworkEvents="true"
+
+                        app:enableLiveVideoUi="false"
+                        app:showVideoCurrentTime="true"
+                        app:showVideoDuration="true"
+                        app:showSeekBar="true"
+                        app:showFullScreenButton="true"
+
+                        />
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:textAlignment="center"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_below="@+id/video3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SOLDER WORKOUT FOR BEGINNER3"
+                        android:textColor="@color/black"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black"/>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

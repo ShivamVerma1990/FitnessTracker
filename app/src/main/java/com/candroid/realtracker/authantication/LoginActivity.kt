@@ -4,20 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
-import android.widget.EditText
 
 import android.widget.ImageView
 import android.widget.Toast
-import com.candroid.realtracker.MainActivity
+import com.candroid.realtracker.workout.MainActivity
 import com.candroid.realtracker.R
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.core.view.View
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.view.*
-import kotlinx.android.synthetic.main.activity_ragister.*
 import kotlinx.android.synthetic.main.activity_ragister.button
-import kotlinx.android.synthetic.main.activity_ragister.inputEmails
 
 class LoginActivity : AppCompatActivity() {
 

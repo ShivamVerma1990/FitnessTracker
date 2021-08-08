@@ -6,20 +6,92 @@
     app:startDestination="@id/optionsFragment">
     <fragment
         android:id="@+id/optionsFragment"
-        android:name="com.candroid.realtracker.OptionsFragment"
+        android:name="com.candroid.realtracker.workout.OptionsFragment"
         android:label="fragment_options"
         tools:layout="@layout/fragment_options" >
         <action
             android:id="@+id/action_optionsFragment_to_bicepsFragment"
             app:destination="@id/bicepsFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_solderFragment"
+            app:destination="@id/solderFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_tricepsFragment"
+            app:destination="@id/tricepsFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_BFragment"
+            app:destination="@id/BFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_legFragment"
+            app:destination="@id/legFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_cardioFragment"
+            app:destination="@id/cardioFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_backFragment"
+            app:destination="@id/backFragment" />
     </fragment>
     <fragment
         android:id="@+id/bicepsFragment"
-        android:name="com.candroid.realtracker.BicepsFragment"
+        android:name="com.candroid.realtracker.workout.BicepsFragment"
         android:label="fragment_biceps"
         tools:layout="@layout/fragment_biceps" >
         <action
             android:id="@+id/action_bicepsFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/solderFragment"
+        android:name="com.candroid.realtracker.ui.SolderFragment"
+        android:label="fragment_solder"
+        tools:layout="@layout/fragment_solder" >
+        <action
+            android:id="@+id/action_solderFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="com.candroid.realtracker.workout.BFragment"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_BFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tricepsFragment"
+        android:name="com.candroid.realtracker.ui.TricepsFragment"
+        android:label="fragment_triceps"
+        tools:layout="@layout/fragment_triceps" >
+        <action
+            android:id="@+id/action_tricepsFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/legFragment"
+        android:name="com.candroid.realtracker.workout.LegFragment"
+        android:label="fragment_leg"
+        tools:layout="@layout/fragment_leg" >
+        <action
+            android:id="@+id/action_legFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardioFragment"
+        android:name="com.candroid.realtracker.workout.CardioFragment"
+        android:label="fragment_cardio"
+        tools:layout="@layout/fragment_cardio" >
+        <action
+            android:id="@+id/action_cardioFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/backFragment"
+        android:name="com.candroid.realtracker.workout.BackFragment"
+        android:label="fragment_back"
+        tools:layout="@layout/fragment_back" >
+        <action
+            android:id="@+id/action_backFragment_to_optionsFragment"
             app:destination="@id/optionsFragment" />
     </fragment>
 </navigation>

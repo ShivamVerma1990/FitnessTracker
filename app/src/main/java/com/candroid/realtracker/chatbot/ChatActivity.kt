@@ -1,11 +1,15 @@
 package com.candroid.realtracker.chatbot
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.candroid.realtracker.R
+import com.candroid.realtracker.chatbot.Constant.OPEN_GOOGLE
+import com.candroid.realtracker.chatbot.Constant.OPEN_SEARCH
 import com.candroid.realtracker.chatbot.Constant.RECEIVE_ID
 import com.candroid.realtracker.chatbot.Constant.SEND_ID
 import kotlinx.android.synthetic.main.activity_chat.*
@@ -15,7 +19,7 @@ class ChatActivity : AppCompatActivity() {
     lateinit var rv_messages: RecyclerView
     lateinit var adapter: MessageAdapter
     val messageList = mutableListOf<ListMessage>()
-    val botName = listOf("Rohan", "sallu", "shivam")
+    val botName = listOf("Rohan", "Pallav", "Shivam")
     lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -120,10 +124,26 @@ class ChatActivity : AppCompatActivity() {
                     )
                 )
                 rv_messages.scrollToPosition(adapter.itemCount - 1)
+                when (response) {
+                    OPEN_GOOGLE -> {
+                        val site = Intent(Intent.ACTION_VIEW)
+                        site.data = Uri.parse("https://www.google.com/")
+                        startActivity(site)
+                    }
+                    OPEN_SEARCH -> {
+                        val site = Intent(Intent.ACTION_VIEW)
+                        val searchTerm: String? = message.substringAfterLast("search")
+                        site.data = Uri.parse("https://www.google.com/search?&q=$searchTerm")
+                        startActivity(site)
+                    }
+
+                }
+
+
             }
+
+
         }
-
-
     }
 
     private fun customBotMessage(message: String) {

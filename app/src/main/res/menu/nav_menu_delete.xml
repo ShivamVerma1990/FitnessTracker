@@ -5,7 +5,7 @@
     <item
         
     android:icon="@drawable/ic_delete"
-    android:title="DELETE"
+    android:title="@string/delete"
     android:id="@+id/delete"
     app:showAsAction="ifRoom"
     />

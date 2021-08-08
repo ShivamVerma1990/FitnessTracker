@@ -3,25 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
 
-        android:title="Log out"
+        android:title="@string/log_out"
+
         android:icon="@drawable/ic_info_outline_black_24dp"
         android:id="@+id/log_out"
 
 
         />
     <item
-        android:title="Privacy policy"
+        android:title="@string/privacy_policy"
         android:icon="@drawable/ic_policy"
         android:id="@+id/policy"
         app:showAsAction="always"
         />
+
     <item
-        android:title="Team"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_team"
-        android:id="@+id/team"/>
-    <item
-        android:title="About"
+        android:title="@string/about"
         app:showAsAction="always"
         android:icon="@drawable/ic_about"
         android:id="@+id/about"/>

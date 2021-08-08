@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ProfileActivity">
+    tools:context=".workout.ProfileActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
 android:layout_alignParentTop="true"
     android:id="@+id/toolbar"/>
         <ImageView
+            android:contentDescription="@string/todo"
             android:layout_below="@id/toolbar"
             android:id="@+id/imageProfile"
             android:layout_width="150dp"
@@ -28,17 +29,20 @@ android:layout_alignParentTop="true"
 
         <TextView
             android:id="@+id/gender"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_below="@+id/imageProfile"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:textStyle="bold"
+            android:layout_below="@+id/imageProfile"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/colorAccent"
-            android:text="Profile Name"
+            android:padding="6dp"
+            android:text="@string/profile_name"
             android:textAlignment="center"
-            android:textSize="20dp"
-            android:layout_margin="10dp"
-            android:padding="6dp"/>
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/profileEmail"
@@ -50,7 +54,7 @@ android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@color/colorAccent"
-            android:text="Phone Number"
+            android:text="@string/phone_number"
             android:textAlignment="center"
             android:layout_margin="10dp"
             android:padding="6dp"/>
@@ -65,7 +69,7 @@ android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@color/colorAccent"
-            android:text="Profile Name"
+            android:text="@string/profile_name"
             android:textAlignment="center"
             android:layout_margin="10dp"
             android:padding="6dp"
@@ -82,7 +86,7 @@ android:layout_alignParentTop="true"
             android:layout_height="40dp"
 
             android:background="@color/colorAccent"
-            android:text="Profile Name"
+            android:text="@string/profile_name"
             android:textAlignment="center"
             android:layout_margin="10dp"
             android:padding="6dp"/>
@@ -98,7 +102,7 @@ android:layout_alignParentTop="true"
             android:layout_height="40dp"
 
             android:background="@color/colorAccent"
-            android:text="Profile Name"
+            android:text="@string/profile_name"
             android:textAlignment="center"
             android:layout_margin="10dp"
             android:padding="6dp"/>
